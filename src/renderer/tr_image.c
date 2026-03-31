@@ -1062,7 +1062,8 @@ void R_LoadImage(const char *name, byte **pic, int *width, int *height)
 
 			if (!loaderRet)
 			{
-				Ren_Drop("Image loader failed to parse an image %s\n", data.name);
+				Ren_Developer("Image loader failed to parse an image %s\n", data.name);
+				*pic    = NULL;
 			}
 		}
 
